@@ -19,7 +19,7 @@ ADD etc/drools-users.properties $JBOSS_HOME/standalone/configuration/drools-user
 ADD etc/drools-roles.properties $JBOSS_HOME/standalone/configuration/drools-roles.properties
 
 # Added files are chowned to root user, change it to the jboss one.
-USER root
+USER 1001
 RUN chown jboss:jboss $JBOSS_HOME/standalone/configuration/standalone-full-drools.xml && \
 chown jboss:jboss $JBOSS_HOME/standalone/configuration/drools-users.properties && \
 chown jboss:jboss $JBOSS_HOME/standalone/configuration/drools-roles.properties
