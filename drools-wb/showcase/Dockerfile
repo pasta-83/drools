@@ -19,17 +19,17 @@ ADD etc/drools-users.properties $JBOSS_HOME/standalone/configuration/drools-user
 ADD etc/drools-roles.properties $JBOSS_HOME/standalone/configuration/drools-roles.properties
 
 # Added files are chowned to root user, change it to the jboss one.
-USER 1001
+USER root
 RUN chown jboss:jboss $JBOSS_HOME/standalone/configuration/standalone-full-drools.xml && \
 chown jboss:jboss $JBOSS_HOME/standalone/configuration/drools-users.properties && \
 chown jboss:jboss $JBOSS_HOME/standalone/configuration/drools-roles.properties
 
 # Switchback to jboss user
-USER 1001
+USER jboss
 
 ####### RUNNING DROOLS-WB ############
 WORKDIR $JBOSS_HOME/bin/
 CMD ["./start_drools-wb.sh"]
 
-USER 1001
+USER root
 ENTRYPOINT ["/tmp/docker_run.sh"]
