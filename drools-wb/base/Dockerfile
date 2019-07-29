@@ -24,13 +24,13 @@ touch $JBOSS_HOME/standalone/deployments/$KIE_CONTEXT_PATH.war.dodeploy &&  \
 rm -rf $HOME/$KIE_CONTEXT_PATH.war
 
 ####### SCRIPTS ############
-USER 1001
+USER root
 ADD etc/start_drools-wb.sh $JBOSS_HOME/bin/start_drools-wb.sh
 RUN chown jboss:jboss $JBOSS_HOME/bin/start_drools-wb.sh
 
 ####### CUSTOM JBOSS USER ############
-# Switchback to jboss user
-# USER 1002
+ Switchback to jboss user
+ USER jboss
 
 
 ####### EXPOSE INTERNAL JBPM GIT PORT ############
@@ -39,6 +39,3 @@ EXPOSE 8001
 ####### RUNNING DROOLS-WB ############
 WORKDIR $JBOSS_HOME/bin/
 CMD ["./start_drools-wb.sh"]
-
-USER 1001
-ENTRYPOINT ["/tmp/docker_run.sh"]
