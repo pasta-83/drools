@@ -3,7 +3,7 @@
 #####################################################################################
 
 ####### BASE ############
-FROM jboss/drools-workbench:latest
+FROM pasta83/drools-wb-base:latest
 
 ####### MAINTAINER ############
 MAINTAINER "pasta83"
