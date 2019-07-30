@@ -3,10 +3,10 @@
 #####################################################################################
 
 ####### BASE ############
-FROM jboss/drools-workbench:7.18.0.Final
+FROM jboss/drools-workbench:latest
 
 ####### MAINTAINER ############
-MAINTAINER "Pat"
+MAINTAINER "pasta83"
 
 ####### ENVIRONMENT ############
 # Use demo and examples by default in this showcase image (internet connection required).
