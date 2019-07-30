@@ -29,7 +29,7 @@ ADD etc/start_drools-wb.sh $JBOSS_HOME/bin/start_drools-wb.sh
 RUN chown jboss:jboss $JBOSS_HOME/bin/start_drools-wb.sh
 
 ####### CUSTOM JBOSS USER ############
- Switchback to jboss user
+#Switchback to jboss user
  USER jboss
 
 
